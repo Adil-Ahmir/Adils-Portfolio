@@ -416,6 +416,16 @@ section {
   color: #b74b4b; /* Title color */
 }
 
+.project-points {
+list-style-type: disc;   /* bullet points */
+padding-left: 20px;      /* indent nicely */
+margin: 10px 0 15px 0;   /* space above and below */
+font-size: 0.9rem;       /* slightly smaller than titles */
+line-height: 1.5;        /* good readability */
+text-align: left;        /* align neatly left */
+}
+
+
 /* BUTTON STYLES */
 .btn {
   font-weight: 600;
@@ -594,4 +604,5 @@ footer p {
   81%, 100%{
       content: "Web Designer";
   }
+
 }
