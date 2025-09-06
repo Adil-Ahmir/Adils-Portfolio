@@ -77,7 +77,7 @@ section { padding: 4vh 0; margin: 0 10rem; min-height: fit-content; }
 }
 .btn:hover { background: #000; }
 
-/* outline variant (for “Live Demo”) */
+/* outline variant */
 .btn-outline {
   border: .1rem solid rgb(53,53,53);
   background: transparent; color: rgb(53,53,53);
@@ -113,21 +113,43 @@ section { padding: 4vh 0; margin: 0 10rem; min-height: fit-content; }
 /* prevent giant image crowding */
 #about .section__pic-container { max-width: 380px; }
 
-/* ========== PROJECTS SECTION ========== */
+/* ========== PROJECTS / EXPERIENCE SECTION ========== */
 #projects .projects-container {
-  display: flex; flex-wrap: wrap; justify-content: center;
-  gap: 3rem; margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;              /* slightly tighter to fit 4 neatly */
+  margin-top: 3rem;
 }
+
 .project-item {
-  background: #fff; border: 1px solid rgb(163,163,163); border-radius: 1rem;
-  padding: 1.25rem 1.25rem 1.5rem; width: 320px; text-align: left;
-  box-shadow: 0 2px 10px rgba(0,0,0,.08); transition: transform .3s ease;
+  background: #fff;
+  border: 1px solid rgb(163,163,163);
+  border-radius: 1rem;
+  padding: 1.1rem 1.1rem 1.3rem;
+  flex: 1 1 calc(25% - 2rem);   /* 4 per row */
+  max-width: 280px;             /* keep cards from stretching too wide */
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  transition: transform .3s ease;
 }
 .project-item:hover { transform: translateY(-4px); }
+
 .project-img { width: 100%; height: auto; border-radius: .75rem; display: block; }
-.project-title { margin: 1rem 0 .5rem; font-size: 1.15rem; color: #b74b4b; }
-.project-points { list-style: disc; padding-left: 1.25rem; margin: .25rem 0 .75rem; font-size: .95rem; line-height: 1.5; }
-.project-item .btn { display: inline-block; padding: .55rem 1rem; border-radius: 2rem; }
+.project-title { margin: .85rem 0 .45rem; font-size: 1.05rem; color: #b74b4b; }
+.project-points { list-style: disc; padding-left: 1.1rem; margin: .25rem 0 .7rem; font-size: .9rem; line-height: 1.5; }
+.project-item .btn { display: inline-block; padding: .5rem 1rem; border-radius: 2rem; }
+
+/* responsive breakpoints for experience grid */
+@media (max-width: 1200px){
+  .project-item { flex: 1 1 calc(33.333% - 2rem); } /* 3 per row */
+}
+@media (max-width: 900px){
+  .project-item { flex: 1 1 calc(50% - 2rem); }     /* 2 per row */
+}
+@media (max-width: 600px){
+  .project-item { flex: 1 1 100%; max-width: 500px; } /* 1 per row */
+}
 
 /* ========== EDUCATION ========== */
 #education { position: relative; margin-top: 6rem; }
